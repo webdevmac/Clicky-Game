@@ -21,15 +21,15 @@ class Game extends React.Component {
     score: 0,
     topScore: 0,
     friends,
-    clickedfriends: []
+    clickedfriends: [],
   };
 
-  clickedImage(id){
-    console.log("clicked");
-    let clickedfriends = this.state.clickedfriends;
+  clickedImage =id =>{
+    console.log(this.state.clickedfriends);
+    const clickedfriends = this.state.clickedfriends;
     let score = this.state.score;
     let topScore = this.state.topScore;
-    this.setState({clickedfriends: []});
+    this.setState({showAlert: 0});
 
     // if the clicked image has an id of the indexed images
     if (clickedfriends.indexOf(id) === -1) {
@@ -40,7 +40,7 @@ class Game extends React.Component {
       this.handleIncrement();
       // run the reshuffle function after each click
       this.makeShuffle();
-    } else if (this.state.score === 12) {
+    } else if (score === 12) {
       // alert player wins
       this.setState({
         showSuccess: 1,
