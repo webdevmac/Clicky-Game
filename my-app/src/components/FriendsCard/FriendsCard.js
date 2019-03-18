@@ -7,7 +7,7 @@ function FriendsCard(props) {
     return ( 
 //    const FriendsCard = props => (
          <div className="card" >
-            <div className="img-container" onClick={props.clickedImage(props.id)}>
+            <div className="img-container" onClick={() => props.clickedImage(props.id)}>
                 <img alt={props.name} src={props.image}/>
                
             </div>

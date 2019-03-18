@@ -29,7 +29,7 @@ class Game extends React.Component {
     let clickedfriends = this.state.clickedfriends;
     let score = this.state.score;
     let topScore = this.state.topScore;
-    this.setState({clickedfriends});
+    this.setState({clickedfriends: []});
 
     // if the clicked image has an id of the indexed images
     if (clickedfriends.indexOf(id) === -1) {
