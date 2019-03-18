@@ -24,7 +24,8 @@ class Game extends React.Component {
     clickedfriends: []
   };
 
-  clickedImage = id => {
+  clickedImage(id){
+    console.log("clicked");
     let clickedfriends = this.state.clickedfriends;
     let score = this.state.score;
     let topScore = this.state.topScore;
@@ -53,9 +54,7 @@ class Game extends React.Component {
         clickedfriends: []
       });
       console.log("duplicate");
-      this.setState({
-        showAlert: 1
-      });
+      
     }
 
     if (score > topScore) {
@@ -93,6 +92,7 @@ class Game extends React.Component {
               key={friend.id}
               name={friend.name}
               image={friend.image}
+              clickedImage={this.clickedImage}
 
             />
           ))}
